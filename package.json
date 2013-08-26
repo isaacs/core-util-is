@@ -1,0 +1,28 @@
+{
+  "name": "util-is",
+  "version": "0.0.0",
+  "description": "The `util.is*` functions introduced in Node v0.12.",
+  "main": "lib/util.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/isaacs/util-is"
+  },
+  "keywords": [
+    "util",
+    "isBuffer",
+    "isArray",
+    "isNumber",
+    "isString",
+    "isRegExp",
+    "isThis",
+    "isThat"
+  ],
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaacs/util-is/issues"
+  }
+}
