@@ -1,14 +1,11 @@
 {
-  "name": "util-is",
+  "name": "core-util-is",
   "version": "0.0.0",
   "description": "The `util.is*` functions introduced in Node v0.12.",
   "main": "lib/util.js",
-  "scripts": {
-    "test": "exit 0"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/isaacs/util-is"
+    "url": "git://github.com/isaacs/core-util-is"
   },
   "keywords": [
     "util",
@@ -18,11 +15,12 @@
     "isString",
     "isRegExp",
     "isThis",
-    "isThat"
+    "isThat",
+    "polyfill"
   ],
   "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/isaacs/util-is/issues"
+    "url": "https://github.com/isaacs/core-util-is/issues"
   }
 }
