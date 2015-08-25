@@ -42,9 +42,9 @@ assert.equal(t.isRegExp('1'), false);
 assert.equal(t.isRegExp(new RegExp()), true);
 
 assert.equal(t.isObject({}), true);
-assert.equal(t.isObject([]), true);
-assert.equal(t.isObject(new RegExp()), true);
-assert.equal(t.isObject(new Date()), true);
+assert.equal(t.isObject([]), false);
+assert.equal(t.isObject(new RegExp()), false);
+assert.equal(t.isObject(new Date()), false);
 
 assert.equal(t.isDate(null), false);
 assert.equal(t.isDate('1'), false);
