@@ -22,5 +22,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/isaacs/core-util-is/issues"
+  },
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "devDependencies": {
+    "tap": "^2.3.0"
   }
 }
