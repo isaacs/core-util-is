@@ -74,3 +74,15 @@ t.equal(util.isBuffer(null), false);
 t.equal(util.isBuffer({}), false);
 t.equal(util.isBuffer(Buffer.alloc(0)), true);
 t.equal(util.isBuffer(Buffer.from('')), true);
+
+t.test('require buffer instead of using global', t => {
+  const util = t.mock('./lib/util.js', {
+    buffer: {
+      Buffer: {
+        isBuffer: true
+      }
+    }
+  });
+  t.equal(util.isBuffer, true, 'loaded from require(), not global')
+  t.end()
+})
