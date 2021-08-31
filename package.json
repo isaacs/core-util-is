@@ -1,6 +1,6 @@
 {
   "name": "core-util-is",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The `util.is*` functions introduced in Node v0.12.",
   "main": "lib/util.js",
   "files": [
