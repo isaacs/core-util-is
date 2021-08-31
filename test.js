@@ -1,76 +1,76 @@
-var assert = require('tap');
+const t = require('tap');
 
-var t = require('./lib/util');
+const util = require('./lib/util');
 
-assert.equal(t.isArray([]), true);
-assert.equal(t.isArray({}), false);
+t.equal(util.isArray([]), true);
+t.equal(util.isArray({}), false);
 {
   const { isArray } = Array
   Array.isArray = null
-  const is = t.isArray({ [Symbol.toStringTag]: 'Array' })
+  const is = util.isArray({ [Symbol.toStringTag]: 'Array' })
   Array.isArray = isArray
-  assert.equal(is, true);
+  t.equal(is, true);
 }
 
-assert.equal(t.isBoolean(null), false);
-assert.equal(t.isBoolean(true), true);
-assert.equal(t.isBoolean(false), true);
+t.equal(util.isBoolean(null), false);
+t.equal(util.isBoolean(true), true);
+t.equal(util.isBoolean(false), true);
 
-assert.equal(t.isNull(null), true);
-assert.equal(t.isNull(undefined), false);
-assert.equal(t.isNull(false), false);
-assert.equal(t.isNull(), false);
+t.equal(util.isNull(null), true);
+t.equal(util.isNull(undefined), false);
+t.equal(util.isNull(false), false);
+t.equal(util.isNull(), false);
 
-assert.equal(t.isNullOrUndefined(null), true);
-assert.equal(t.isNullOrUndefined(undefined), true);
-assert.equal(t.isNullOrUndefined(false), false);
-assert.equal(t.isNullOrUndefined(), true);
+t.equal(util.isNullOrUndefined(null), true);
+t.equal(util.isNullOrUndefined(undefined), true);
+t.equal(util.isNullOrUndefined(false), false);
+t.equal(util.isNullOrUndefined(), true);
 
-assert.equal(t.isNumber(null), false);
-assert.equal(t.isNumber('1'), false);
-assert.equal(t.isNumber(1), true);
+t.equal(util.isNumber(null), false);
+t.equal(util.isNumber('1'), false);
+t.equal(util.isNumber(1), true);
 
-assert.equal(t.isString(null), false);
-assert.equal(t.isString('1'), true);
-assert.equal(t.isString(1), false);
+t.equal(util.isString(null), false);
+t.equal(util.isString('1'), true);
+t.equal(util.isString(1), false);
 
-assert.equal(t.isSymbol(null), false);
-assert.equal(t.isSymbol('1'), false);
-assert.equal(t.isSymbol(1), false);
-assert.equal(t.isSymbol(Symbol()), true);
+t.equal(util.isSymbol(null), false);
+t.equal(util.isSymbol('1'), false);
+t.equal(util.isSymbol(1), false);
+t.equal(util.isSymbol(Symbol()), true);
 
-assert.equal(t.isUndefined(null), false);
-assert.equal(t.isUndefined(undefined), true);
-assert.equal(t.isUndefined(false), false);
-assert.equal(t.isUndefined(), true);
+t.equal(util.isUndefined(null), false);
+t.equal(util.isUndefined(undefined), true);
+t.equal(util.isUndefined(false), false);
+t.equal(util.isUndefined(), true);
 
-assert.equal(t.isRegExp(null), false);
-assert.equal(t.isRegExp('1'), false);
-assert.equal(t.isRegExp(new RegExp()), true);
+t.equal(util.isRegExp(null), false);
+t.equal(util.isRegExp('1'), false);
+t.equal(util.isRegExp(new RegExp()), true);
 
-assert.equal(t.isObject({}), true);
-assert.equal(t.isObject([]), true);
-assert.equal(t.isObject(new RegExp()), true);
-assert.equal(t.isObject(new Date()), true);
+t.equal(util.isObject({}), true);
+t.equal(util.isObject([]), true);
+t.equal(util.isObject(new RegExp()), true);
+t.equal(util.isObject(new Date()), true);
 
-assert.equal(t.isDate(null), false);
-assert.equal(t.isDate('1'), false);
-assert.equal(t.isDate(new Date()), true);
+t.equal(util.isDate(null), false);
+t.equal(util.isDate('1'), false);
+t.equal(util.isDate(new Date()), true);
 
-assert.equal(t.isError(null), false);
-assert.equal(t.isError({ err: true }), false);
-assert.equal(t.isError(new Error()), true);
+t.equal(util.isError(null), false);
+t.equal(util.isError({ err: true }), false);
+t.equal(util.isError(new Error()), true);
 
-assert.equal(t.isFunction(null), false);
-assert.equal(t.isFunction({ }), false);
-assert.equal(t.isFunction(function() {}), true);
+t.equal(util.isFunction(null), false);
+t.equal(util.isFunction({ }), false);
+t.equal(util.isFunction(function() {}), true);
 
-assert.equal(t.isPrimitive(null), true);
-assert.equal(t.isPrimitive(''), true);
-assert.equal(t.isPrimitive(0), true);
-assert.equal(t.isPrimitive(new Date()), false);
+t.equal(util.isPrimitive(null), true);
+t.equal(util.isPrimitive(''), true);
+t.equal(util.isPrimitive(0), true);
+t.equal(util.isPrimitive(new Date()), false);
 
-assert.equal(t.isBuffer(null), false);
-assert.equal(t.isBuffer({}), false);
-assert.equal(t.isBuffer(Buffer.alloc(0)), true);
-assert.equal(t.isBuffer(Buffer.from('')), true);
+t.equal(util.isBuffer(null), false);
+t.equal(util.isBuffer({}), false);
+t.equal(util.isBuffer(Buffer.alloc(0)), true);
+t.equal(util.isBuffer(Buffer.from('')), true);
