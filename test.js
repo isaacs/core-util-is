@@ -4,6 +4,13 @@ var t = require('./lib/util');
 
 assert.equal(t.isArray([]), true);
 assert.equal(t.isArray({}), false);
+{
+  const { isArray } = Array
+  Array.isArray = null
+  const is = t.isArray({ [Symbol.toStringTag]: 'Array' })
+  Array.isArray = isArray
+  assert.equal(is, true);
+}
 
 assert.equal(t.isBoolean(null), false);
 assert.equal(t.isBoolean(true), true);
