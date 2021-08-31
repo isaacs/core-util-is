@@ -3,6 +3,9 @@
   "version": "1.0.2",
   "description": "The `util.is*` functions introduced in Node v0.12.",
   "main": "lib/util.js",
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/isaacs/core-util-is"
