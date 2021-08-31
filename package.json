@@ -27,7 +27,10 @@
     "url": "https://github.com/isaacs/core-util-is/issues"
   },
   "scripts": {
-    "test": "tap test.js"
+    "test": "tap test.js",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags"
   },
   "devDependencies": {
     "tap": "^15.0.9"
