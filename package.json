@@ -30,6 +30,6 @@
     "test": "tap test.js"
   },
   "devDependencies": {
-    "tap": "^2.3.0"
+    "tap": "^15.0.9"
   }
 }
