@@ -65,4 +65,5 @@ assert.equal(t.isPrimitive(new Date()), false);
 
 assert.equal(t.isBuffer(null), false);
 assert.equal(t.isBuffer({}), false);
-assert.equal(t.isBuffer(new Buffer(0)), true);
+assert.equal(t.isBuffer(Buffer.alloc(0)), true);
+assert.equal(t.isBuffer(Buffer.from('')), true);
