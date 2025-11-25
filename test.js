@@ -49,9 +49,10 @@ t.equal(util.isRegExp('1'), false);
 t.equal(util.isRegExp(new RegExp()), true);
 
 t.equal(util.isObject({}), true);
-t.equal(util.isObject([]), true);
-t.equal(util.isObject(new RegExp()), true);
-t.equal(util.isObject(new Date()), true);
+t.equal(util.isObject([]), false);
+t.equal(util.isObject(Symbol()), false);
+t.equal(util.isObject(new RegExp()), false);
+t.equal(util.isObject(new Date()), false);
 
 t.equal(util.isDate(null), false);
 t.equal(util.isDate('1'), false);
